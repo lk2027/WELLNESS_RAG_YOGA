@@ -1,4 +1,4 @@
-# Virtual Environments
+# Python virtual environments
 venv/
 chroma_venv/
 
@@ -9,6 +9,16 @@ __pycache__/
 # Environment variables
 .env
 
+# Node / frontend / backend
+node_modules/
+backend/node_modules/
+frontend/node_modules/
+frontend/.vite/
+
+# Local databases
+chroma_db/
+
 # OS files
 .DS_Store
 Thumbs.db
+
