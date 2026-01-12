@@ -1,0 +1,71 @@
+================================================================================
+  YOGA RAG SYSTEM - QUICK DEMO COMMANDS
+================================================================================
+
+STEP 1: Start Chroma DB (PowerShell Window 1)
+----------------------------------------------
+cd c:\Users\Lenovo\Desktop\YOGARAG
+.\chroma_venv\Scripts\Activate.ps1
+chroma run --path ./chroma_db --port 8000
+
+Wait for: "Chroma is running on http://localhost:8000"
+Keep this window open!
+
+
+STEP 2: Start Backend (PowerShell Window 2 - NEW WINDOW)
+---------------------------------------------------------
+cd c:\Users\Lenovo\Desktop\YOGARAG\backend
+npm start
+
+Wait for: "🚀 Server running on port 3001"
+Keep this window open!
+
+
+STEP 3: Run Demo (PowerShell Window 3 - NEW WINDOW)
+----------------------------------------------------
+Option A - Full Interactive Demo:
+cd c:\Users\Lenovo\Desktop\YOGARAG
+.\demo.ps1
+
+Option B - Quick Test:
+cd c:\Users\Lenovo\Desktop\YOGARAG
+.\test_query.ps1
+
+Option C - Single Query Test:
+$body = @{query='What are the benefits of yoga?'} | ConvertTo-Json
+Invoke-RestMethod -Uri 'http://localhost:3001/api/ask' -Method Post -Body $body -ContentType 'application/json'
+
+
+SAMPLE QUERIES TO TEST:
+-----------------------
+1. "What are the benefits of yoga?"
+2. "How do I practice Tree Pose?"
+3. "What are beginner standing poses?"
+4. "What are the benefits of Warrior II?"
+5. "I am pregnant, what poses should I avoid?" (shows safety warning)
+
+
+USING CMD INSTEAD OF POWERSHELL:
+--------------------------------
+For CMD, double-click: demo.cmd
+Or run: powershell -File demo.ps1
+
+
+TROUBLESHOOTING:
+----------------
+If backend won't start:
+  taskkill /F /IM node.exe
+  Then restart backend
+
+If port 3001 is busy:
+  Check if another Node process is running
+  taskkill /F /IM node.exe
+
+If Chroma DB won't start:
+  Make sure Python 3.11 is installed
+  Activate virtual environment first
+
+
+================================================================================
+  That's it! Follow the 3 steps above to demonstrate the system.
+================================================================================

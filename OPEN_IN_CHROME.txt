@@ -1,0 +1,91 @@
+================================================================================
+  HOW TO OPEN THE FRONTEND IN CHROME - SIMPLE GUIDE
+================================================================================
+
+METHOD 1: AUTOMATIC (EASIEST!)
+-------------------------------
+Just run this ONE command:
+
+    cd c:\Users\Lenovo\Desktop\YOGARAG
+    .\START_ALL.ps1
+
+This will:
+  ✅ Start Chroma DB
+  ✅ Start Backend  
+  ✅ Start Frontend
+  ✅ Open Chrome automatically at http://localhost:3000
+
+Then in Chrome, just type your question and click "Ask"!
+
+
+METHOD 2: MANUAL (Step by Step)
+---------------------------------
+Step 1: Start Chroma DB (PowerShell Window 1)
+    cd c:\Users\Lenovo\Desktop\YOGARAG
+    .\chroma_venv\Scripts\Activate.ps1
+    chroma run --path ./chroma_db --port 8000
+
+Step 2: Start Backend (PowerShell Window 2 - NEW WINDOW)
+    cd c:\Users\Lenovo\Desktop\YOGARAG\backend
+    npm start
+
+Step 3: Start Frontend + Open Chrome (PowerShell Window 3 - NEW WINDOW)
+    cd c:\Users\Lenovo\Desktop\YOGARAG
+    .\start_frontend.ps1
+
+OR if frontend is already running, just open Chrome:
+    cd c:\Users\Lenovo\Desktop\YOGARAG
+    .\open_chrome.ps1
+
+
+METHOD 3: MANUAL CHROME (If scripts don't work)
+------------------------------------------------
+1. Make sure Chroma DB, Backend, and Frontend are all running
+2. Open Google Chrome manually
+3. Go to: http://localhost:3000
+4. You should see the Yoga RAG interface!
+
+
+WHAT TO DO IN CHROME:
+---------------------
+1. You'll see a text box: "Ask Me Anything About Yoga"
+2. Type your question, for example:
+   - "What are the benefits of yoga?"
+   - "How do I practice Tree Pose?"
+   - "What are beginner standing poses?"
+3. Click the "🧘 Ask" button
+4. See the answer with sources!
+
+
+TROUBLESHOOTING:
+----------------
+❌ Chrome doesn't open?
+   → Manually open Chrome and go to: http://localhost:3000
+
+❌ "Connection Error" in Chrome?
+   → Check all 3 services are running:
+     - Chroma DB (port 8000)
+     - Backend (port 3001) 
+     - Frontend (port 3000)
+
+❌ Frontend won't start?
+   → Make sure you're in the frontend folder:
+     cd c:\Users\Lenovo\Desktop\YOGARAG\frontend
+     npm run dev
+
+
+QUICK COMMANDS:
+---------------
+Start everything + open Chrome:
+    .\START_ALL.ps1
+
+Just open Chrome (if frontend running):
+    .\open_chrome.ps1
+
+Start frontend + open Chrome:
+    .\start_frontend.ps1
+
+
+================================================================================
+  That's it! The web UI in Chrome is much easier than command line!
+================================================================================

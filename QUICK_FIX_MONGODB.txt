@@ -1,0 +1,39 @@
+============================================================
+QUICK FIX: MongoDB Atlas IP Whitelist
+============================================================
+
+PROBLEM:
+Your IP address is not whitelisted in MongoDB Atlas.
+
+SOLUTION (Choose One):
+
+OPTION 1: Add Your Current IP (Recommended)
+--------------------------------------------
+1. Go to: https://cloud.mongodb.com/
+2. Log in to your account
+3. Click on your cluster name
+4. Click "Network Access" (left sidebar)
+5. Click "Add IP Address" button
+6. Click "Add Current IP Address" button
+7. Click "Confirm"
+8. Wait 1-2 minutes for changes to take effect
+9. Restart backend server
+
+OPTION 2: Allow All IPs (Quick but Less Secure - for testing only)
+-------------------------------------------------------------------
+1. Go to: https://cloud.mongodb.com/
+2. Click your cluster → Network Access
+3. Click "Add IP Address"
+4. Enter: 0.0.0.0/0
+5. Click "Confirm"
+6. Wait 1-2 minutes
+7. Restart backend server
+
+AFTER WHITELISTING:
+-------------------
+1. Go back to backend terminal
+2. Press Ctrl+C to stop (if running)
+3. Run: npm start
+4. You should see: "✅ Connected to MongoDB"
+
+============================================================
